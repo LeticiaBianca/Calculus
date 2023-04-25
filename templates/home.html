@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="/static/css/style.css"/>
+
+    <title>Integral Por Fração Parcial</title>
+  </head>
+
+  <body>
+    <div class="titulo">
+        <h1>Integral Por Fração Parcial</h1>
+    </div>
+    <div class="expressao">
+        <div>
+            <p> &#x222b </p>
+        </div>
+        <div class="formulario">
+            <form action="{{url_for('predict')}}" method="post">
+                
+                <input type="text" name="na" required="required"/>
+                x + 
+                <input type="text" name="nb" required="required"/>
+                <br>
+                <hr size="1" width="80%">
+                <input type="text" name="a" required="required"/>
+                x² + 
+                <input type="text" name="b" required="required"/>
+                x +
+                <input type="text" name="c" required="required"/>
+                <br>
+                <br>
+                <button type="submit">Calcular</button>
+            </form> 
+        </div>
+    </div>
+    <div class="resultado">
+        {{prediction_text}}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+.titulo{
+    text-align: center;
+}
+
+.expressao{
+    font-size: 25px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.expressao div{
+    display: inline-block;
+}
+
+.expressao p{
+    font-size: 150px;
+}
+
+.resultado{
+    font-size: 40px;
+    text-align: center;
+    background-color: lightyellow;
+    border-radius: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+input{
+    background-color: bisque;
+    border-style: dashed;
+    border-color: grey;
+    width: 20px;
+}
+
+button{
+    background-color: aquamarine;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: darkblue;
+}
+
