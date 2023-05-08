@@ -15,8 +15,10 @@ def predict():
     a = request.form['a']
     b = request.form['b']
     c = request.form['c']
+    da = request.form['da']
+    db = request.form['db']
 
-    result = integral(na,nb,a,b,c)
+    result = integral(na,nb,a,b,c, da, db)
 
     return render_template('home.html', prediction_text = str(result))
 

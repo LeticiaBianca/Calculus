@@ -2,6 +2,14 @@
     text-align: center;
 }
 
+.funcao{
+    margin-left: 50px;
+}
+
+.definida{
+    line-height: 50px;
+}
+
 .expressao{
     font-size: 25px;
     text-align: center;

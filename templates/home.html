@@ -23,7 +23,13 @@
         </div>
         <div class="formulario">
             <form action="{{url_for('predict')}}" method="post">
+              <div class="definida">
+                <input type="text" name="da"/>
+                <br>
+                <input type="text" name="db"/>
+              </div>
                 
+              <div class="funcao">
                 <input type="text" name="na" required="required"/>
                 x + 
                 <input type="text" name="nb" required="required"/>
@@ -34,6 +40,8 @@
                 <input type="text" name="b" required="required"/>
                 x +
                 <input type="text" name="c" required="required"/>
+              </div>
+                
                 <br>
                 <br>
                 <button type="submit">Calcular</button>

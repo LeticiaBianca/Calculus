@@ -1,8 +1,9 @@
 import math
 
-def integral(na, nb, a, b, c):
 
-    if(verificanum(na, nb, a, b, c)):
+def integral(na, nb, a, b, c, da, db):
+
+    if(verificanum(na) and verificanum(nb) and verificanum(a) and verificanum(b) and verificanum(c)):
         na = int(na)
         nb= int(nb)
 
@@ -20,7 +21,17 @@ def integral(na, nb, a, b, c):
             A = int((na*x1 + nb))/deltax
             B = int((na*x2 + nb))/deltax
 
-            resultado = "Resultado: ",int(A),"ln(x - ", int(x1), ")+",int(B),"ln(x - ",int(x2),") + C"
+            if(da != "" and db != ""):
+        
+                if(verificanum(da) and verificanum(db)):
+                    da = calculaDef(A, x1, B, x2, da)
+                    db = calculaDef(A, x1, B, x2, db)
+
+                    resultado = da - db
+                else:
+                    resultado = "Digite números para definir a integral ou n se quiser indefinida"
+            else:
+                resultado = "Resultado: ",int(A),"ln(x - ", int(x1), ")+",int(B),"ln(x - ",int(x2),") + C"
         else:
             resultado = "Trabalhando nisto..."
     else:
@@ -28,14 +39,28 @@ def integral(na, nb, a, b, c):
 
     return resultado
 
-def verificanum(na, nb, a, b, c):
+def verificanum(x):
     try:
-        int(na)
-        int(nb)
-
-        int(a)
-        int(b)
-        int(c)
+        int(x)
     except:
         return False
     return True
+
+def calculaDef(A, x1, B, x2, x):
+    aux = int(x) - int(x1)
+    if(aux == 0):
+        p1 = 0
+    else:
+        if(aux<0):
+            aux = aux * -1
+        p1 = math.log(aux,2)
+   
+    aux = int(x) - int(x2)
+    if(aux == 0):
+        p2 = 0
+    else:
+        if(aux<0):
+            aux = aux * -1
+        p2 = math.log(aux, 2)
+
+    return int(A)*int(p1) + int(B)*int(p2)
