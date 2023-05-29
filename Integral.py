@@ -4,18 +4,31 @@ from sympy import *
 
 x = symbols("x")
 
-na = "x**2 + 2*x + 7"
-
 def integral(da, db, numerador, denominador):
 
-    expr = "(" + numerador +")/(" + denominador +")"
+    numerador = eval(numerador)
+    denominador = eval(denominador)
 
-    if(da != "" and db != ""):
-        r = integrate(eval(expr), (x, da, db))
+    dnum = degree(numerador)
+    dden = degree(denominador)
+
+    if(dnum > dden):
+        cos, res = div(numerador, denominador)
+        funcao  = cos + (res/denominador)
+        
+        if(da != "" and db != ""):
+            r = integrate(funcao, (x, da, db))
+        else:
+            r = integrate(funcao, x)
+
+        return r
     else:
-        r = integrate(eval(expr), x)
-    
-    return latex(r)
+        fator = apart(numerador/denominador)
+        if(da != "" and db != ""):
+            r = integrate(fator, (x, da, db))
+        else:
+            r = integrate(fator, x)
+        return latex(r)
 
     if(verificanum(na) and verificanum(nb) and verificanum(a) and verificanum(b) and verificanum(c)):
         na = int(na)
