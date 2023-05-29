@@ -9,6 +9,10 @@
       crossorigin="anonymous"
     /> -->
     <link rel="stylesheet" href="/static/css/style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
     <title>Integral Por Fração Parcial</title>
   </head>
@@ -18,38 +22,32 @@
         <h1>Integral Por Fração Parcial</h1>
     </div>
     <div class="expressao">
-        <div>
-            <p> &#x222b </p>
-        </div>
+       
         <div class="formulario">
             <form action="{{url_for('predict')}}" method="post">
+              <div class="simbolo">
+                <p> &#x222b </p>
+              </div>
               <div class="definida">
-                <input type="text" name="da"/>
+                <input type="text" name="da">
                 <br>
-                <input type="text" name="db"/>
+                <input type="text" name="db">
               </div>
                 
               <div class="funcao">
-                <input type="text" name="na" required="required"/>
-                x + 
-                <input type="text" name="nb" required="required"/>
-                <br>
-                <hr size="1" width="80%">
-                <input type="text" name="a" required="required"/>
-                x² + 
-                <input type="text" name="b" required="required"/>
-                x +
-                <input type="text" name="c" required="required"/>
+                <input type="text" name="numerador" required="required"/>
+                <hr size="4" width="100%" color="black">
+                <input type="text" name="denominador" required="required"/>
+                <hr size="0" width="0%">
               </div>
-                
-                <br>
-                <br>
+              <div class="dx"><p>dx</p> </div>
+              <br>
                 <button type="submit">Calcular</button>
             </form> 
         </div>
     </div>
-    <div class="resultado">
-        {{prediction_text}}
+    <div class="latex">
+        $${{prediction_text}}$$
     </div>
   </body>
 </html>

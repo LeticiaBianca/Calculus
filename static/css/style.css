@@ -1,19 +1,25 @@
+body{
+    background-color: #f7f4e8;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
 .titulo{
     text-align: center;
 }
 
 .funcao{
     margin-left: 50px;
+    
 }
 
 .definida{
-    line-height: 50px;
+    line-height: 100px;
 }
 
 .expressao{
     font-size: 25px;
     text-align: center;
-    background-color: bisque;
+    background-color: #daf3ea;
     border-radius: 25px;
     margin-left: 200px;
     margin-right: 200px;
@@ -23,14 +29,16 @@
     display: inline-block;
 }
 
-.expressao p{
+.dx{
+    display: inline-block;
+    font-size: 40px;
+}
+.simbolo{
     font-size: 150px;
 }
-
-.resultado{
-    font-size: 40px;
+.latex{
     text-align: center;
-    background-color: lightyellow;
+    background-color: #85e6c0;
     border-radius: 25px;
     margin-left: 200px;
     margin-right: 200px;
@@ -39,19 +47,26 @@
 }
 
 input{
-    background-color: bisque;
+    background-color: #daf3ea;
     border-style: dashed;
-    border-color: grey;
+    border-color: #0b0b0d;
     width: 20px;
+    text-align: center;
+}
+
+.funcao input{
+    width: 100px;
+    height: 25px;
 }
 
 button{
-    background-color: aquamarine;
+    background-color: #6bb39b;
     border: none;
     border-radius: 15px;
     padding: 15px;
+    margin-bottom: 50px;
     font-size: 15px;
     font-weight: bold;
-    color: darkblue;
+    color: #f7f4e8;
 }
 

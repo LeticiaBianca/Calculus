@@ -1,7 +1,21 @@
 import math
+from sympy import *
 
 
-def integral(na, nb, a, b, c, da, db):
+x = symbols("x")
+
+na = "x**2 + 2*x + 7"
+
+def integral(da, db, numerador, denominador):
+
+    expr = "(" + numerador +")/(" + denominador +")"
+
+    if(da != "" and db != ""):
+        r = integrate(eval(expr), (x, da, db))
+    else:
+        r = integrate(eval(expr), x)
+    
+    return latex(r)
 
     if(verificanum(na) and verificanum(nb) and verificanum(a) and verificanum(b) and verificanum(c)):
         na = int(na)

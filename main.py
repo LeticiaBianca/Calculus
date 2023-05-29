@@ -10,17 +10,14 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    na = request.form['na']
-    nb = request.form['nb']
-    a = request.form['a']
-    b = request.form['b']
-    c = request.form['c']
     da = request.form['da']
     db = request.form['db']
+    numerador = request.form['numerador']
+    denominador = request.form['denominador']
 
-    result = integral(na,nb,a,b,c, da, db)
+    result = integral(da,db,numerador, denominador)
 
-    return render_template('home.html', prediction_text = str(result))
+    return render_template('home.html', prediction_text = result)
 
 if __name__ == '__main__':
     app.run()
